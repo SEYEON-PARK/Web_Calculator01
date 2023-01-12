@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="container">
-		<div>
+		<div id="view">
 		</div>
 	
 	</div>
