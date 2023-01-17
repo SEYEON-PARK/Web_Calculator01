@@ -5,37 +5,39 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <style>
+        div.container{
+            width: 250px;
+            margin:0 auto;
+        }
+        fieldset{
+            width:250px;
+        }
+        legend{
+            margin:0 auto;
+        }
+        select{
+            width:80px;
+        }
+        
     </style>
 </head>
 <body>
     <form method="post">
 	   <div class="container">
-           <div id="result">
-			
-           </div>
-           <div class="buttons">
-               <input class="part1" type="button" name="clear" value="AC">
-               <input class="part1" type="submit" name="enter" value="=">
-               <br>
-               <input class="part2" type="button" name="number" value="7">
-               <input class="part2" type="button" name="number" value="8">
-               <input class="part2" type="button" name="number" value="9">
-               <input class="part2" type="button" name="number" value="+">
-               <br>
-               <input class="part2" type="button" name="number" value="4">
-               <input class="part2" type="button" name="number" value="5">
-               <input class="part2" type="button" name="number" value="6">
-               <input class="part2" type="button" name="number" value="-">
-               <br>
-               <input class="part2" type="button" name="number" value="1">
-               <input class="part2" type="button" name="number" value="2">
-               <input class="part2" type="button" name="number" value="3">
-               <input class="part2" type="button" name="number" value="*">
-               <br>
-               <input class="part2 0" type="button" name="number" value="0">
-               <input class="part2" type="button" name="number" value=".">
-               <input class="part2" type="button" name="number" value="/">
-           </div>
+           <fieldset>
+               <legend>계산기</legend>
+               <p>숫자 1 : <input type="text" name="number1"></p>
+               <p>
+               연산자 : 
+               <select name="operator">
+                   <option>+</option>
+                   <option>-</option>
+                   <option>*</option>
+                   <option>/</option>
+               </select>
+               </p>
+               <p>숫자 2 : <input type="text" name="number2"></p>
+           </fieldset>
 	   </div>
     </form>
 </body>
