@@ -21,7 +21,7 @@ public class CalculatorController {
 	}
 	
 	@PostMapping("calculator/main")
-	public String main(Model model, Integer number) {
+	public String main(Model model, Integer number1, String operator, Integer number2) {
 		return "calculator/main";
 	}
 }
