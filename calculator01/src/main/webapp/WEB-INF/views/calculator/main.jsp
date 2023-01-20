@@ -18,7 +18,10 @@
         select{
             width:80px;
         }
-        
+        p.result{
+        	width:180px;
+        	margin-left:150px;
+        }
     </style>
 </head>
 <body>
@@ -26,18 +29,21 @@
 	   <div class="container">
            <fieldset>
                <legend>계산기</legend>
-               <p>숫자 1 : <input type="text" name="number1"></p>
+               <p>숫자 1 : <input type="text" name="number1" value="${ number1 }"></p>
                <p>
                연산자 : 
                <select name="operator">
-                   <option>+</option>
-                   <option>-</option>
-                   <option>*</option>
-                   <option>/</option>
+                   <option ${ operator =="+" ? "selected" : ""}>+</option>
+                   <option ${ operator =="-" ? "selected" : ""}>-</option>
+                   <option ${ operator =="*" ? "selected" : ""}>*</option>
+                   <option ${ operator =="/" ? "selected" : ""}>/</option>
                </select>
                </p>
-               <p>숫자 2 : <input type="text" name="number2"></p>
+               <p>숫자 2 : <input type="text" name="number2" value="${ number2 }"></p>
+               <p id="result">결과 : <input type="text" value="${ result }"></p>
+               <input type="submit" value="계산">
            </fieldset>
+           ${ errorMessage }
 	   </div>
     </form>
 </body>

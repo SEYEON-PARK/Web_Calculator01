@@ -17,11 +17,23 @@ public class CalculatorController {
 	
 	@GetMapping("calculator/main")
 	public String main(Model model) {
+		/*
+		int num1=0;
+		String operator="+";
+		int num2=0;
+		
+		model.addAttribute("number1", num1);
+		model.addAttribute("operator", operator);
+		model.addAttribute("number2", num2);
+		*/		
 		return "calculator/main";
 	}
 	
 	@PostMapping("calculator/main")
-	public String main(Model model, Integer number1, String operator, Integer number2) {
+	public String main(Model model, Double number1, String operator, Double number2) {
+		model.addAttribute("number1", number1);
+		model.addAttribute("operator", operator);
+		model.addAttribute("number2", number2);
 		String errorMessage="";
 		if(number1==null) {
 			errorMessage="숫자 1을 입력하세요.";
@@ -36,12 +48,13 @@ public class CalculatorController {
 			model.addAttribute("errorMessage", errorMessage);
 		}
 		else {
-			
+			double result = calculation(number1, operator, number2);
+			model.addAttribute("result", result);
 		}
 		return "calculator/main";
 	}
 	
-	private int calculation(int num1, String operator, int num2) {
+	private double calculation(double num1, String operator, double num2) {
 		switch(operator) {
 			case "+":
 				return num1+num2;
@@ -51,6 +64,8 @@ public class CalculatorController {
 				return num1*num2;
 			case "/":
 				return num1/num2;
+			default:
+				return -1;
 		}
 	}
 }
