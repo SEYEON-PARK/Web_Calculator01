@@ -25,9 +25,13 @@
         p#result input{
         	width:110px;
         }
+        input[type="submit"]{
+        	margin-left:40%;
+        }
         span#errorMessage{
         	color:red;
         }
+        
         
     </style>
 </head>
