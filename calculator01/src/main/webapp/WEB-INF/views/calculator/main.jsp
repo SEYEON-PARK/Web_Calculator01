@@ -18,10 +18,17 @@
         select{
             width:80px;
         }
-        p.result{
+        p#result{
         	width:180px;
-        	margin-left:150px;
+        	margin-left:15%;
         }
+        p#result input{
+        	width:110px;
+        }
+        span#errorMessage{
+        	color:red;
+        }
+        
     </style>
 </head>
 <body>
@@ -43,7 +50,7 @@
                <p id="result">결과 : <input type="text" value="${ result }"></p>
                <input type="submit" value="계산">
            </fieldset>
-           ${ errorMessage }
+           <span id="errorMessage">${ errorMessage }</span>
 	   </div>
     </form>
 </body>
