@@ -48,24 +48,24 @@ public class CalculatorController {
 			model.addAttribute("errorMessage", errorMessage);
 		}
 		else {
-			double result = calculation(number1, operator, number2);
+			String result = calculation(number1, operator, number2);
 			model.addAttribute("result", result);
 		}
 		return "calculator/main";
 	}
 	
-	private double calculation(double num1, String operator, double num2) {
+	private String calculation(double num1, String operator, double num2) {
 		switch(operator) {
 			case "+":
-				return num1+num2;
+				return Double.toString(num1+num2);
 			case "-":
-				return num1-num2;
+				return Double.toString(num1-num2);
 			case "*":
-				return num1*num2;
+				return Double.toString(num1*num2);
 			case "/":
-				return num1/num2;
+				return Double.toString(num1/num2);
 			default:
-				return -1;
+				return "-1";
 		}
 	}
 }
