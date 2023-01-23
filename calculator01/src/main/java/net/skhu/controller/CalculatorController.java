@@ -57,7 +57,12 @@ public class CalculatorController {
 	private String calculation(double num1, String operator, double num2) {
 		switch(operator) {
 			case "+":
-				return Double.toString(num1+num2);
+				if((num1+num2)%1==0) {
+					return Integer.toString((int)(num1+num2));
+				}
+				else {
+					return Double.toString(num1+num2);
+				}
 			case "-":
 				return Double.toString(num1-num2);
 			case "*":
