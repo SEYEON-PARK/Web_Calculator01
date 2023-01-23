@@ -64,11 +64,26 @@ public class CalculatorController {
 					return Double.toString(num1+num2);
 				}
 			case "-":
-				return Double.toString(num1-num2);
+				if((num1-num2)%1==0) {
+					return Integer.toString((int)(num1-num2));
+				}
+				else {
+					return Double.toString(num1-num2);
+				}
 			case "*":
-				return Double.toString(num1*num2);
+				if((num1*num2)%1==0) {
+					return Integer.toString((int)(num1*num2));
+				}
+				else {
+					return Double.toString(num1*num2);
+				}
 			case "/":
-				return Double.toString(num1/num2);
+				if((num1/num2)%1==0) {
+					return Integer.toString((int)(num1/num2));
+				}
+				else {
+					return Double.toString(num1/num2);
+				}
 			default:
 				return "-1";
 		}
