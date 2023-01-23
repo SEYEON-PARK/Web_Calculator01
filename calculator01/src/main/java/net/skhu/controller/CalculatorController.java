@@ -31,9 +31,25 @@ public class CalculatorController {
 	
 	@PostMapping("calculator/main")
 	public String main(Model model, Double number1, String operator, Double number2) {
-		model.addAttribute("number1", number1);
+		int num1, num2;
+		if(number1%1==0) {
+			num1=(int)(number1/1);
+			model.addAttribute("number1", num1);
+		}
+		else {
+			model.addAttribute("number1", number1);
+		}
+		
+		if(number2%1==0) {
+			num2=(int)(number2/1);
+			model.addAttribute("number2", num2);
+		}
+		else {
+			model.addAttribute("number2", number2);
+		}
+		
 		model.addAttribute("operator", operator);
-		model.addAttribute("number2", number2);
+		
 		String errorMessage="";
 		if(number1==null) {
 			errorMessage="숫자 1을 입력하세요.";
