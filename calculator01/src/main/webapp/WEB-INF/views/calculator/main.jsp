@@ -27,7 +27,8 @@
         }
         input[type="submit"]{
         	margin-left:40%;
-        	color:blue;
+        	color:#902;
+        	background-color:#baa;
         }
         span#errorMessage{
         	color:red;
