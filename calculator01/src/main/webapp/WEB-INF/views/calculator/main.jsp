@@ -27,11 +27,11 @@
         }
         input[type="submit"]{
         	margin-left:40%;
+        	color:blue;
         }
         span#errorMessage{
         	color:red;
         }
-        
         
     </style>
 </head>
