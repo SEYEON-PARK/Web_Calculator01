@@ -3,53 +3,42 @@ package net.skhu.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-*/
+ */
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 /*
 import org.springframework.web.bind.annotation.RequestMapping;
-*/
+ */
 
 @Controller
 public class CalculatorController {
-	
+
 	@GetMapping("calculator/main")
 	public String main(Model model) {
 		/*
 		int num1=0;
 		String operator="+";
 		int num2=0;
-		
+
 		model.addAttribute("number1", num1);
 		model.addAttribute("operator", operator);
 		model.addAttribute("number2", num2);
-		*/		
+		 */		
 		return "calculator/main";
 	}
-	
+
 	@PostMapping("calculator/main")
 	public String main(Model model, Double number1, String operator, Double number2) {
-		int num1, num2;
-		if(number1%1==0) {
-			num1=(int)(number1/1);
-			model.addAttribute("number1", num1);
+		/*
+		if(number1==null) {
+			number1=0.0;
 		}
-		else {
-			model.addAttribute("number1", number1);
+		if(number2==null) {
+			number2=0.0;
 		}
-		
-		if(number2%1==0) {
-			num2=(int)(number2/1);
-			model.addAttribute("number2", num2);
-		}
-		else {
-			model.addAttribute("number2", number2);
-		}
-		
-		model.addAttribute("operator", operator);
-		
+		 */
 		String errorMessage="";
 		if(number1==null) {
 			errorMessage="숫자 1을 입력하세요.";
@@ -66,42 +55,63 @@ public class CalculatorController {
 		else {
 			String result = calculation(number1, operator, number2);
 			model.addAttribute("result", result);
+
+
+			int num1, num2;
+			if(number1%1==0) {
+				num1=(int)(double)(number1);
+				model.addAttribute("number1", num1);
+			}
+			else {
+				model.addAttribute("number1", number1);
+			}
+
+			if(number2%1==0) {
+				num2=(int)(number2/1);
+				model.addAttribute("number2", num2);
+			}
+			else {
+				model.addAttribute("number2", number2);
+			}
 		}
+
+		model.addAttribute("operator", operator);
+
 		return "calculator/main";
 	}
-	
+
 	private String calculation(double num1, String operator, double num2) {
 		switch(operator) {
-			case "+":
-				if((num1+num2)%1==0) {
-					return Integer.toString((int)(num1+num2));
-				}
-				else {
-					return Double.toString(num1+num2);
-				}
-			case "-":
-				if((num1-num2)%1==0) {
-					return Integer.toString((int)(num1-num2));
-				}
-				else {
-					return Double.toString(num1-num2);
-				}
-			case "*":
-				if((num1*num2)%1==0) {
-					return Integer.toString((int)(num1*num2));
-				}
-				else {
-					return Double.toString(num1*num2);
-				}
-			case "/":
-				if((num1/num2)%1==0) {
-					return Integer.toString((int)(num1/num2));
-				}
-				else {
-					return Double.toString(num1/num2);
-				}
-			default:
-				return "-1";
+		case "+":
+			if((num1+num2)%1==0) {
+				return Integer.toString((int)(num1+num2));
+			}
+			else {
+				return Double.toString(num1+num2);
+			}
+		case "-":
+			if((num1-num2)%1==0) {
+				return Integer.toString((int)(num1-num2));
+			}
+			else {
+				return Double.toString(num1-num2);
+			}
+		case "*":
+			if((num1*num2)%1==0) {
+				return Integer.toString((int)(num1*num2));
+			}
+			else {
+				return Double.toString(num1*num2);
+			}
+		case "/":
+			if((num1/num2)%1==0) {
+				return Integer.toString((int)(num1/num2));
+			}
+			else {
+				return Double.toString(num1/num2);
+			}
+		default:
+			return "-1";
 		}
 	}
 }
