@@ -67,7 +67,7 @@ public class CalculatorController {
 			}
 
 			if(number2%1==0) {
-				num2=(int)(number2/1);
+				num2=(int)(double)number2;
 				model.addAttribute("number2", num2);
 			}
 			else {
