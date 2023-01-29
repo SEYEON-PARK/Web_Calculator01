@@ -29,7 +29,7 @@
         	margin-left:40%;
         	color:#902;
         	background-color:#baa;
-        	padding:10px;
+        	padding:0 10px;
         }
         span#errorMessage{
         	color:red;
