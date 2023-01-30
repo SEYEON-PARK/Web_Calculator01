@@ -11,6 +11,7 @@
         }
         fieldset{
             width:250px;
+            background-color:#eee;
         }
         legend{
             margin:0 auto;
