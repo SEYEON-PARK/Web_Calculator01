@@ -32,6 +32,9 @@
         	background-color:#baa;
         	padding:2px 10px;
         }
+        input[type="submit"]:hover{
+        	transform:translateY(-2px);
+        }
         span#errorMessage{
         	color:red;
         }
