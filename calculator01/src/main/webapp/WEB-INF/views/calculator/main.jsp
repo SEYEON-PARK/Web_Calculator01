@@ -34,6 +34,7 @@
         }
         input[type="submit"]:hover{
         	transform:translateY(-2px);
+        	box-shadow:2px 2px 5px gray;
         }
         span#errorMessage{
         	color:red;
