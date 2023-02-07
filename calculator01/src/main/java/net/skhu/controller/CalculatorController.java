@@ -76,6 +76,7 @@ public class CalculatorController {
 				model.addAttribute("number2", number2);
 			}
 		}
+		/*
 		
 		@ExceptionHandler(MethodArgumentTypeMismatchException.class)
 		public String catcher(Model model) {
@@ -89,7 +90,8 @@ public class CalculatorController {
 
 		return "calculator/main";
 	}
-
+	*/
+		
 	private String calculation(double num1, String operator, double num2) {
 		switch(operator) {
 		case "+":
