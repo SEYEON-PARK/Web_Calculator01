@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 /*
 import org.springframework.web.bind.annotation.RequestMapping;
  */
@@ -75,7 +76,15 @@ public class CalculatorController {
 				model.addAttribute("number2", number2);
 			}
 		}
-
+		
+		@ExceptionHandler(MethodArgumentTypeMismatchException.class)
+		public String catcher(Model model) {
+			errorMessage="숫자를 입력해주세요.";
+			model.addAttribute("errorMessage", errorMessage);
+			
+			return "calculator/main";
+		}
+		
 		model.addAttribute("operator", operator);
 
 		return "calculator/main";
