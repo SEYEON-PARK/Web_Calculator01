@@ -59,7 +59,6 @@ public class CalculatorController {
 			errorMessage="숫자 2를 입력하세요.";
 			model.addAttribute("errorMessage", errorMessage);
 		}
-		/*else if()
 		else {
 			String result = calculation(number1, operator, number2);
 			model.addAttribute("result", result);
@@ -90,11 +89,11 @@ public class CalculatorController {
 			model.addAttribute("errorMessage", errorMessage);
 			
 			return "calculator/main";
-		}
+		}*/
 		
 		model.addAttribute("operator", operator);
 
-		return "calculator/main";*/
+		return "calculator/main";
 	}
 	
 		
