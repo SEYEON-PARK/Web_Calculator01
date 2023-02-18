@@ -40,7 +40,13 @@ public class CalculatorController {
 			number2=0.0;
 		}
 		 */
+		
 		String errorMessage="";
+		/*
+		if(number1.getClass().getName()!=Double) {
+			errorMessage="잘못 입력하셨습니다.";
+		}
+		*/
 		if(number1==null) {
 			errorMessage="숫자 1을 입력하세요.";
 			model.addAttribute("errorMessage", errorMessage);
@@ -53,7 +59,7 @@ public class CalculatorController {
 			errorMessage="숫자 2를 입력하세요.";
 			model.addAttribute("errorMessage", errorMessage);
 		}
-		/*else if()*/
+		/*else if()
 		else {
 			String result = calculation(number1, operator, number2);
 			model.addAttribute("result", result);
@@ -88,9 +94,9 @@ public class CalculatorController {
 		
 		model.addAttribute("operator", operator);
 
-		return "calculator/main";
+		return "calculator/main";*/
 	}
-	*/
+	
 		
 	private String calculation(double num1, String operator, double num2) {
 		switch(operator) {
