@@ -81,8 +81,8 @@ public class CalculatorController {
 				model.addAttribute("number2", number2);
 			}
 		}
+		// ExceptionHandler는 오류가 났을 때 사용자에게 "죄송합니다 고객님~" 같은 메시지 창이 뜰 수 있도록 하는 거다! 
 		/*
-		
 		@ExceptionHandler(MethodArgumentTypeMismatchException.class)
 		public String catcher(Model model) {
 			errorMessage="숫자를 입력해주세요.";
