@@ -30,6 +30,7 @@ public class CalculatorController {
 		return "calculator/main";
 	}
 
+	// 아예 처음부터 Double로 받으면 문자를 입력하는 순간 오류가 난다! 그래서 String으로 받고 난 후, 뒤에서 처리해라!
 	@PostMapping("calculator/main")
 	public String main(Model model, Double number1, String operator, Double number2) {
 		/*
